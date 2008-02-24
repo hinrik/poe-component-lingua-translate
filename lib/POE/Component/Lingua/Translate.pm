@@ -85,11 +85,13 @@ sub _result {
     if ($ref->{error}) {
         # do something?
     }
-
-    $poe_kernel->post($ref->{data}->{recipient} => translated => {
-        text => $result,
-        context => $ref->{data}->{context},
+    
+    my ($recipient, $context) = @{ $ref->{data} }{ qw(recipient context) };
+    $poe_kernel->post($recipient => translated => {
+        text    => $result,
+        context => $context,
     });
+    
     return;
 }
 
@@ -130,13 +132,16 @@ L<Lingua::Translate|Lingua::Translate>
          }
      );
      
-     $poe_kernel->post(translator => translate => 'this is a sentence');
+     $poe_kernel->post(translator => translate => {
+         text => 'this is a sentence',
+         context => { },
+     );
      return;
  }
 
  sub translated {
      my $result = $_[ARG0];
-     print $result . "\n";
+     print $resul->{text} . "\n";
  }
 
 =head1 DESCRIPTION
@@ -178,8 +183,8 @@ The POE events this component will accept.
 
 =item C<translate>
 
-Takes one argument, a string to translate. It will be passed to the
-L<Lingua::Translate|Lingua::Translate> object's C<translate()> method.
+Takes two arguments: a string to translate, and an optional hash reference
+containing context information. You will get this hashref back with the result.
 
 =item C<shutdown>
 
@@ -195,7 +200,8 @@ The POE events emitted by this component.
 
 =item C<translated>
 
-ARG0 is the translated text, or C<undef> if the translation failed.
+ARG0 is the translated text, or C<undef> if the translation failed. ARG1 is
+the context hashref from C<translate>.
 
 =back
 
