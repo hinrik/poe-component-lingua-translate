@@ -1,7 +1,7 @@
 package POE::Component::Lingua::Translate;
 
 use strict;
-use warnings;
+use warnings FATAL => 'all';
 use Carp;
 use POE;
 use POE::Component::Generic;
