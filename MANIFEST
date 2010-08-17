@@ -1,6 +1,0 @@
-Makefile.PL
-MANIFEST
-INSTALL
-Changes
-lib/POE/Component/Lingua/Translate.pm
-t/00-compile.t

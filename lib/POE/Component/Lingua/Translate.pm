@@ -6,8 +6,6 @@ use Carp;
 use POE;
 use POE::Component::Generic;
 
-our $VERSION = '0.04';
-
 sub new {
     my ($package, %args) = @_;
     my $self = bless { }, $package;
@@ -102,8 +100,7 @@ __END__
 
 =head1 NAME
 
-POE::Component::Lingua::Translate - A non-blocking wrapper around
-L<Lingua::Translate|Lingua::Translate>
+POE::Component::Lingua::Translate - A non-blocking wrapper around L<Lingua::Translate|Lingua::Translate>
 
 =head1 SYNOPSIS
 

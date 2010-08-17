@@ -1,3 +1,6 @@
+{{$NEXT}}
+    - Use Dist::Zilla
+
 0.05 Fri Feb 29 19:06:00 GMT 2008
     - Handle translation errors
 
