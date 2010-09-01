@@ -1,3 +1,6 @@
+0.05 Fri Feb 29 19:06:00 GMT 2008
+    - Handle translation errors
+
 0.04 Sun Feb 24 15:56:45 GMT 2008
     - Change the interface a little
     - Remove Makefile
