@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-POE::Component::Lingua::Translate - A non-blocking wrapper around L<Lingua::Translate|Lingua::Translate>
+POE::Component::Lingua::Translate - A non-blocking wrapper around Lingua::Translate
 
 =head1 SYNOPSIS
 
